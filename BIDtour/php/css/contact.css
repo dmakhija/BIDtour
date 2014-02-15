@@ -1,0 +1,35 @@
+/*contact page */
+
+#contact{
+	background-color: lightpink;
+	/*border: 1px solid green;
+	border-radius: 10px 10px;*/
+}
+#form{
+	
+	font-family: sans-serif, arial;
+	margin: 10px 10em 10px 10em;
+}
+
+.fields{
+	margin: 10px 50px;
+	
+	padding: 5px 5px;
+}
+
+
+span{color:red;}
+.fsize{width:16em;}
+.fleft{margin-left:3.5em;}
+
+
+#fname{margin-right: 8em;}
+#email, #email2 {margin: 5px 5px 5px 5px;}
+
+#phone{margin: 0px 5px 5px 8px;}
+#street{ margin: 0 2px 2px 5px; }
+#city{margin: 0 1px 5px 5px;}
+#country{margin:0 1px 5px 0; }
+label{margin-left:5px;}
+#button{margin-left: 20px; }
+.return{ text-align: right; margin-right: 5px;}

@@ -1,0 +1,203 @@
+<!Doctype html>
+<html>
+<head>
+<link
+	href="//netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.css"
+	rel="stylesheet" />
+<link href='http://fonts.googleapis.com/css?family=Englebert|Signika' rel='stylesheet' type='text/css'>
+<link href='css/lavish-bootstrap.css' rel='stylesheet' type='text/css'>
+<link href='css/main.css' rel='stylesheet' type='text/css'>
+<link href='css/contact.css' rel='stylesheet' type='text/css'>
+</head>
+<body>
+	<!-- Wrap all page content here -->
+	<div id="wrap">
+
+		<!-- Static navbar -->
+		<div class="container">
+			<div class="navbar navbar-default navbar-static-top"
+				role="navigation">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse"
+						data-target=".navbar-collapse">
+						<span class="sr-only">Toggle navigation</span> <span
+							class="icon-bar"></span> <span class="icon-bar"></span> <span
+							class="icon-bar"></span>
+					</button>
+					<div id ="homepage"><a class="navbar-brand" href="#homepage" >BID tour</a></div>
+				</div>
+				<div class="collapse navbar-collapse">
+					<ul id="navPlaceHolder" class="nav navbar-nav">
+					<script id="navTemplate" type="text/template">
+						<li id="continent<%= id %>" ><a href="#<%= name %>"><%= name.charAt(0).toUpperCase() + name.slice(1) %></a></li>
+					</script>
+					</ul>
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="https://www.sandbox.paypal.com/cgi-bin/webscr?cmd=_cart&business=BJG3JYHE5QSS4&display=1">View Cart</a></li>
+					</ul>
+				</div>
+				<!--/.nav-collapse -->
+			</div>
+		</div>
+
+		<!-- Begin page content -->
+		<div id="product" class="container">
+			<div data-ride="carousel" class="carousel slide" id="myCarousel1">
+				<!-- Indicators -->
+				<ol id="indicatorPlaceHolder" class="carousel-indicators">
+				<script id="indicatorTemplate" type="text/template">
+					<li class="<%= activeClass %>" data-slide-to="<%= nImage %>" data-target="#myCarousel1"></li>
+				</script>
+				</ol>
+				<div id="myCarousel1PlaceHolder" class="carousel-inner">
+					<script id="myCarousel1Template" type="text/template">
+					<div class="item <%= activeClass %>">
+						<img alt="<%= title %>" src="images/<%= url %>.jpg" title="<%= title %>" />
+					</div>
+				</script>
+				</div>
+				<a data-slide="prev" href="#myCarousel1"
+					class="left carousel-control"><i class="fa fa-arrow-left"></i></a>
+				<a data-slide="next" href="#myCarousel1"
+					class="right carousel-control"><i class="fa fa-arrow-right"></i></a>
+			</div>
+			<div id="productPlaceHolder" class="product-caption">
+				<script id="productTemplate" type="text/template">
+				<h1><%= name %></h1>
+				<div class="row">
+				<div class="col-md-9"><p class="lead"><%= description %></p></div>
+				<div class="col-md-1"><p class="lead">$<%= price %></p></div>
+				<% if(paypal_url !== ""){ %>
+				<div class="col-md-2"><a class="btn btn-primary" href="<%= paypal_url %>">Buy Now</a></div>
+				<% } %>
+				</div>
+			</script>
+			</div>
+			<div data-ride="carousel" class="carousel slide" id="myCarousel2">
+				<div id="myCarousel2PlaceHolder" class="carousel-inner">
+					<script id="previewTemplate" type="text/template">
+					<div class="col-md-3">
+						<a href="#<%= continent_id %>/<%= id %>">
+						<img alt="<%= name %>" src="images/ThumbsPics/<%= url %>.jpg" title="<%= name %>" />
+						</a>
+					</div>
+				</script>
+				</div>
+				<a data-slide="prev" href="#myCarousel2"
+					class="left carousel-control"><i class="fa fa-arrow-left"></i></a>
+				<a data-slide="next" href="#myCarousel2"
+					class="right carousel-control"><i class="fa fa-arrow-right"></i></a>
+			</div>
+		</div>
+		<div id="about" class="container">
+		<div id="imageAbout"><img src="images/icon/bidtouricon.png" alt="something" ></img></div>
+			<div id="infoAbout"><p id="test">BIDTour.com has been providing fun and affordable travel services to Canadians for over 20 years.</p>
+			<p>We are the first travel retailer to offer all inclusive package vacations. </p>
+<p>In early 2000, as internet technology emerged in the travel industry, 
+BIDTour.com launched a transactional website, with an innovative travel discount model, 
+offering Canadian consumers the convenience of shopping and buying affordable package holidays and flights via the internet.</p>
+<p> Now offering discount flights, vacation packages, cruises, coach tours, hotels, car rentals, and more - BIDTour .com 
+can fulfill all of your travel needs. BIDTour.com has preferred partnerships with all major travel providers including tour
+ operators, airlines, hotel chains, car rental, and bus tour companies.</p></div>
+			
+		</div>
+		<div id="contact" class="container">		
+			<form id="form" action="mailto:iezenyimulu-cc@conestogac.com method="Post" enctype="text/plain">
+			<fieldset class="fields">
+			
+			<legend> Personal  Information</legend>
+			<label class="fleft" for="fname">First Name</label><span>*</span>
+			<input id="fname" name="fname" type="text" />
+			
+			
+			<label for="lname">Last Name</label><span>*</span>
+			<input  name="lname" type="text" />
+			
+			
+			<label >Email<span>*</span>
+			<input id="email" name="email" type="text" class="fsize"/>
+			</label>
+			<label for="email2">Alternate Email</label>
+			<input id="email2" name="email2" type="text" class="fsize"/><br/>
+			
+			<label for="phone">Phone Number<span>*</span></label>
+			<input id="phone" name="phone" type="text" />
+			
+			</fieldset>
+					
+			<fieldset class="fields">
+					<legend>Address</legend>
+						
+					<label for="street"> Street</label>
+					<input id="street" name="street" type="text" />
+					<label for="city">City</label>
+					<input id="city" name="city" type="text" />
+					<label>Province/State
+					<input id="country" name="Province/State" type="text" />
+					</label><br/>
+					<label class="block" for="country"> Country</label>
+					<select id="country" size=1  name="country" >
+						<option value="Select your country"></option>
+						<option value="Albania">Albania</option>
+						<option value="Algeria">Algeria</option>
+						<option value=" Bahamas">Bahamas</option> 
+						<option value="Brazil">Brazil</option>
+						<option value="Canada">Canada</option>
+						<option value="China">China</option>
+						<option value="Cameroon">Cameroon</option>
+						<option value="Denmark">Denmark</option>
+						<option value="Egypt">Egypt</option>
+						<option value="Indonesia">Indonesia</option>
+						<option value="London">London</option>
+						<option value="Nigeria">Nigeria</option>
+						<option value="South Africa">South Africa</option>
+						<option value="United States">United States</option>
+						<option value="Zimbabawe">Zimbabwe</option>
+					</select>
+				</fieldset>
+				
+			<fieldset class="fields">
+					<legend> Comment</legend>
+					<textarea rows="5" cols="40"></textarea>
+			</fieldset>
+					<div id="button">	
+					<input name="submit" type="submit" value="submit" />
+					<input name="reset" type="reset" value="reset" /><br />
+					</div>					
+						<p class="return"><a href="index.html">return home</a></p>
+			</form>
+	</div>
+	</div>
+	
+	<div class="container">
+		<div id="footer">
+			<p class="text-muted credit">
+				&copy; 2013 <a href="http://syndicateme.net">Bahareh & Ify & Durga</a>
+			</p>
+		</div>
+	</div>
+	<!-- Bootstrap core JavaScript
+    ================================================== -->
+	<!-- Placed at the end of the document so the pages load faster -->
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.js"></script>
+	<script
+		src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+	<script>
+		jQuery("document").ready(function() {
+			jQuery("#myCarousel1").carousel();
+			jQuery("#myCarousel2").carousel({
+				interval : false
+			});
+		});
+	</script>
+	<!-- underscore is used to render the template with the object from the api -->
+	<script
+		src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js"></script>
+	<!-- backbone is a router that respects the back button -->
+	<script
+		src="//cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.0/backbone-min.js"></script>
+	<!-- this is our javascript -->
+	<script src="js/swag.js"></script>
+
+</body>
+</html>
